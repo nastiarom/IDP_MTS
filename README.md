@@ -24,20 +24,13 @@ scp .ssh/authorized_keys 192.168.1.121:/home/team/.ssh/
 Через редактор меняем файл hosts, чтобы можно было обращаться к нодам по определенным именам:
 sudo vim /etc/hosts
 Файл hosts у jump node должен принять похожий вид:
-# 127.0.0.1 localhost
+
 127.0.0.1 jn
 
-# 192.168.1.118 jn
 192.168.1.119 nn
 192.168.1.120 dn-00
 192.168.1.121 dn-01
 
-# The following lines are desirable for IPv6 capable hosts
-# ::1     ip6-localhost ip6-loopback
-# fe00::0 ip6-localnet
-# ff00::0 ip6-mcastprefix
-# ff02::1 ip6-allnodes
-# ff02::2 ip6-allrouters
 Сохраняем файл и выходим из редактора.
 sudo vim /etc/hostname -- в этом файле меняем изначальное имя ноды на то, которое прописали в hosts
 Сохраняем файл и выходим из редактора.
@@ -46,20 +39,13 @@ sudo adduser hadoop
 ssh 192.168.1.119 -- заходим на name node
 sudo adduser hadoop -- добавляем пользователя
 sudo vim /etc/hosts --  редактируем файл hosts для name node: 
-# 127.0.0.1 localhost
 
 192.168.1.118 jn
 192.168.1.119 nn
 192.168.1.120 dn-00
 192.168.1.121 dn-01
 
-# The following lines are desirable for IPv6 capable hosts
 
-# ::1     ip6-localhost ip6-loopback
-# fe00::0 ip6-localnet
-# ff00::0 ip6-mcastprefix
-# ff02::1 ip6-allnodes
-# ff02::2 ip6-allrouters
 Сохраняем файл и выходим из редактора.
 sudo vim /etc/hostname -- в этом файле меняем изначальное имя ноды на то, которое прописали в hosts
 Сохраняем файл и выходим из редактора.
@@ -67,21 +53,13 @@ exit
 ssh 192.168.1.120 -- переключаемся на первую дата ноду
 sudo adduser hadoop -- добавляем пользователя
 sudo vim /etc/hosts -- редактируем файл hosts для data node-00:
-# 127.0.0.1 localhost
+
 127.0.0.1 dn-00
 
 192.168.1.118 jn
 192.168.1.119 nn
-# 192.168.1.120 dn-00
 192.168.1.121 dn-01
 
-# The following lines are desirable for IPv6 capable hosts
-
-# ::1     ip6-localhost ip6-loopback
-# fe00::0 ip6-localnet
-# ff00::0 ip6-mcastprefix
-# ff02::1 ip6-allnodes
-# ff02::2 ip6-allrouters
 Сохраняем файл и выходим из редактора.
 sudo vim /etc/hostname -- в этом файле меняем изначальное имя ноды на то, которое прописали в hosts
 Сохраняем файл и выходим из редактора.
@@ -90,20 +68,12 @@ ssh 192.168.1.121 -- переключаемся на оставшуюся дат
 sudo adduser hadoop -- добавляем пользователя
 sudo vim /etc/hosts -- редактируем файл hosts для data node-01:
 
-# 127.0.0.1 localhost
 127.0.0.1 dn-01
 
 192.168.1.118 jn
 192.168.1.119 nn
 192.168.1.120 dn-00
-# 192.168.1.121 dn-01
 
-# The following lines are desirable for IPv6 capable hosts
-# ::1     ip6-localhost ip6-loopback
-# fe00::0 ip6-localnet
-# ff00::0 ip6-mcastprefix
-# ff02::1 ip6-allnodes
-# ff02::2 ip6-allrouters
 Сохраняем файл и выходим из редактора.
 sudo vim /etc/hostname -- в этом файле меняем изначальное имя ноды на то, которое прописали в hosts
 Сохраняем файл и выходим из редактора.
